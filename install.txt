@@ -1,0 +1,10 @@
+First of all, the files with extension.swift are onle text files with UTF-8 encoding, so any text editor can open it.
+
+**Requirements
+php and mysql.. My advice download xampp..
+
+**Insall
+create a database called testing, import to your database the .sql file form folder instal. 
+you can change the database settings according to your server from the functions.php page.
+
+NB: I hate typing(anything that aint code) and documentation so i know this install.txt file sucks.. lol

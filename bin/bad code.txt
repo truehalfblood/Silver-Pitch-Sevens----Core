@@ -1,0 +1,80 @@
+
+//kicking function mostly for starts
+function kick() {
+    global $player;
+    global $ball;
+    global $number;
+    global $current;
+    
+    /*kicking ability gets converted to 100 percent, where 100 isequal to 25, the
+    maximum skill attainable */
+    
+    $currently_kicking=($player[$current][$number][8]*100)/25; 
+    $rand_kicking=  mt_rand(1,100);
+    
+    if ($rand_kicking<=$currently_kicking) {
+        //meeans the kick waws good and possesion must be retained on the kicking side
+        
+        $result=TRUE;
+        
+    } else {
+        //means the kick was badand possesion is lost
+        
+        $result=FALSE;
+        
+    }
+    
+   return $result;
+    
+}
+
+
+function determine_ground($result_from_kicking){
+ global $current;
+ global $current_position;
+ 
+ if ($result_from_kicking && $current==1 && $current_position<=54) {
+     
+     $current_position=$current_position+mt_rand(5, 45);
+ } 
+ elseif ($result_from_kicking && $current==2 && $current_position<=55) {
+ 
+     $current_position=$current_position-mt_rand(5, 45);
+     
+} 
+
+function check_time() {
+//checks how much time has elapsed then updates it, depending on the speed of the players in the game
+    global $minutes, $number, $current, $player, $weather;
+
+
+    if ($weather == "windy") {
+
+        $random_moderator = mt_rand(34, 40); //time goes by quicker with people doing alot less coz of obvious reasons
+    } elseif ($weather == "sunny") {
+
+        $random_moderator = mt_rand(32, 38); //optimal performance is achieved
+    } elseif ($weather == "stormy") {
+
+        $random_moderator = mt_rand(37, 49); //time goes by faster, with people doing less, i.e the grounds are mushy:P
+    } elseif ($weather == "dry") {
+
+        $random_moderator = 36; //moderate conditions
+    }
+
+    //generates a random number although time should be constant, other factor are not
+
+    $elapsed_time = $player[$current][$number][5] * ($random_moderator / 100);
+
+    if ($minutes <= 0) {
+        //means its the end of game
+    } else {
+
+        //updates team
+        $minutes = $minutes - $elapsed_time;
+    }
+}
+
+
+
+
