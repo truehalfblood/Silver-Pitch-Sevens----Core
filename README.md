@@ -8,9 +8,9 @@ in that sense. The "Core" for sports based games are usually the match engines. 
 the results of the given match according to the given statics of either the team or individual players depending on what
 sports it is.
 
-This game basically seeks to emulate a Rugby Match and by extension theSeven ASide version of the game. The core is still 
-at very early stages of it developmentt so nothing concrete yet. 
+This game basically seeks to emulate a Rugby Match and by extension the Seven Aside version of the game. The core is still 
+at very early stages of it development so nothing concrete yet. 
 
-So summary, what i am building here ois the match engine for a browser based game that would eventually be 
+So summary, what I am building here is the match engine for a browser based game that would eventually be 
 ***Silver Pitch Sevens***.
 
